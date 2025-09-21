@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>InfoCenter Store</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="info-header">
+          <div class="opening-hours">
+            <p><span>Seg-Sab:</span>9:00 - 19:00</p>
+          </div>
+          <div class="our-address">
+            <p>
+              Visite nossa loja na Rua XYZ, 123 ou<span
+                >Entre em contato conosco</span
+              >
+            </p>
+          </div>
+          <div class="store-contacts">
+            <div class="cellphones">
+              <p>Telefone: (00) 0000-00000</p>
+            </div>
+            <div class="sociais-icons">
+              <img src="assets/facebook.svg" alt="Facebook InfoCenter Store" />
+              <img
+                src="assets/instagram.svg"
+                alt="Instagram InfoCenter Store"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="navigation-header">
+          <div class="logo">
+            <a href="index.html"
+              ><img src="assets/logo.svg" alt="Logo InfoCenter Store"
+            /></a>
+          </div>
+          <nav class="menu">
+            <ul>
+              <li><a href="#">CPUS</a></li>
+              <li><a href="#">Notebooks</a></li>
+              <li><a href="#">Monitores</a></li>
+              <li><a href="#">Acessórios</a></li>
+              <li><a href="#">Serviços</a></li>
+              <li><a href="#">Entre em contato</a></li>
+            </ul>
+          </nav>
+          <div class="action-icons">
+            <img
+              src="assets/search.svg"
+              alt="Busca InfoCenter Store"
+              class="search"
+            />
+            <div class="cart">
+              <a href="cart.html">
+                <img
+                  src="assets/cart.svg"
+                  alt="Carrinho de produtos InfoCenter Store"
+                />
+                <p class="items-cart">0</p>
+              </a>
+            </div>
+            <div class="mobile-menu-icon">&#9776;</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li>Carrinho</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="cart">
+      <div class="container">
+        <div class="general-content-form">
+          <div class="order-cart">
+            <form>
+              <div class="titles form">
+                <h1>Carrinho</h1>
+                <p>Digite as informações do seu endereço abaixo:</p>
+              </div>
+              <div class="info-content-form">
+                <div class="line-form">
+                  <div class="group-form">
+                    <label>Nome Completo:<span>*</span></label>
+                    <input
+                      type="text"
+                      id="fullName"
+                      placeholder="Nome Completo"
+                    />
+                  </div>
+                  <div class="group-form">
+                    <label>CPF:<span>*</span></label>
+                    <input type="text" id="cpf" placeholder="CPF" />
+                  </div>
+                  <div class="group-form">
+                    <label>RG:<span>*</span></label>
+                    <input type="text" id="rg" placeholder="RG" />
+                  </div>
+                </div>
+                <div class="line-form">
+                  <div class="group-form input-cep">
+                    <label>CEP:<span>*</span></label>
+                    <input type="text" id="cep" placeholder="CEP" />
+                    <div class="search-cep">
+                      <img
+                        src="assets/search.svg"
+                        alt="InfoCenter Store"
+                        onclick="searchCEP()"
+                      />
+                    </div>
+                  </div>
+                  <div class="group-form">
+                    <label>Cidade:<span>*</span></label>
+                    <input type="text" id="city" placeholder="Cidade" />
+                  </div>
+                  <div class="group-form">
+                    <label>Estado:<span>*</span></label>
+                    <input type="text" id="state" placeholder="Estado" />
+                  </div>
+                </div>
+                <div class="line-form">
+                  <div class="group-form">
+                    <label>Bairro:<span>*</span></label>
+                    <input type="text" id="neighborhood" placeholder="Bairro" />
+                  </div>
+                  <div class="group-form">
+                    <label>Rua:<span>*</span></label>
+                    <input type="text" id="street" placeholder="Rua" />
+                  </div>
+                  <div class="group-form">
+                    <label>Número/Complemento:<span>*</span></label>
+                    <input
+                      type="text"
+                      id="number"
+                      placeholder="Número/Complemento"
+                    />
+                  </div>
+                </div>
+              </div>
+            </form>
+            <div class="info-products-order">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Item</th>
+                    <th>Preço</th>
+                    <th>Qtde</th>
+                    <th>Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <div class="info-products-order-mobile">
+                <h2>Produtos</h2>
+              </div>
+              <div class="send-order">
+                <input
+                  type="button"
+                  value="Limpar carrinho"
+                  onclick="resetCart()"
+                />
+                <input
+                  type="button"
+                  value="Reservar pedido"
+                  onclick="finishOrder()"
+                  id="send-order"
+                  class="disabled-send-order"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="infos-order">
+            <h1>Resumo</h1>
+            <h2>Resumo da sua compra</h2>
+            <h3>
+              Neste resumo incluímos o preço dos <br />
+              itens com o frete.
+            </h3>
+            <div class="add-coupon">
+              <input
+                type="text"
+                placeholder="Adicione um cupom"
+                id="discount"
+              />
+              <input type="button" value="Adicionar" onclick="addCoupon()" />
+            </div>
+            <span class="coupon-error">Cupom inexistente ou inválido</span>
+            <div class="coupon-added">
+              <h4>Cupom addicionado:</h4>
+              <span></span>
+            </div>
+            <div class="line-info-order">
+              <p>Subtotal</p>
+              <p>R$ <span id="subtotal-value">0</span></p>
+            </div>
+            <div class="line-info-order">
+              <p>Envio</p>
+              <p>R$ <span id="shipment-value">0</span></p>
+            </div>
+            <span class="legend-order"
+              >(7 dias úteis para entrega em qualquer parte da cidade)</span
+            >
+            <div class="line-info-order">
+              <p>Total do pedido</p>
+              <p class="total-order">
+                R$ <span id="total-order-value">0</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quality">
+      <div class="container">
+        <div class="info-quality">
+          <div class="card-qualify">
+            <img src="assets/support.svg" alt="Suporte InfoCenter Store" />
+            <h1>Suporte</h1>
+            <h2>Nosso suporte funciona de Seg à Sab das 09hrs às 19hrs</h2>
+          </div>
+          <div class="card-qualify">
+            <img src="assets/guarantee.svg" alt="Garantia InfoCenter Store" />
+            <h1>Garantia</h1>
+            <h2>
+              Nossa garantia é de 1 ano após a compra de qualquer equipamento e
+              de 6 meses para nossos serviços.
+            </h2>
+          </div>
+          <div class="card-qualify">
+            <img
+              src="assets/best-price.svg"
+              alt="Melhor preço InfoCenter Store"
+            />
+            <h1>Suporte</h1>
+            <h2>Todos nossos produtos estão com 20% de desconto</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="newsletter-footer">
+          <div class="titles-newsletter">
+            <h1>Assine nossa newsletter</h1>
+            <h2>fique por dentro das melhores ofertas da loja</h2>
+          </div>
+          <div class="input-form-newsletter">
+            <input
+              type="text"
+              id="newsletter-email"
+              class="input-newsletter"
+              placeholder="Digite seu email"
+            />
+            <input type="submit" value="Enviar" />
+          </div>
+        </div>
+        <div class="infos-footer">
+          <div class="card-footer">
+            <span>Endereço</span>
+            <p>Rua XYZ, 123</p>
+            <p>Telefone: <a href="tel:+5500000000000"></a>(00)00000-0000</p>
+            <p>Horário: Segunda-Sábado: 09:00 - 19:00</p>
+            <p>
+              Email:
+              <a href="mailto:infocenterstore@contato"
+                >infocenterstore@contato</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="additional-infos-footer">
+          <div class="social-icons-footer">
+            <img
+              src="assets/footer/facebook.svg"
+              alt="Facebook InfoCenter Store"
+            />
+            <img
+              src="assets/footer/instagram.svg"
+              alt="Instagram InfoCenter Store"
+            />
+          </div>
+          <div class="credit-card-accepted">
+            <img src="assets/footer/paypal.svg" alt="Paypal InfoCenter Store" />
+            <img src="assets/footer/visa.svg" alt="Visa InfoCenter Store" />
+            <img
+              src="assets/footer/maestro.svg"
+              alt="Maestro InfoCenter Store"
+            />
+            <img
+              src="assets/footer/discover.svg"
+              alt="Discover InfoCenter Store"
+            />
+            <img
+              src="assets/footer/american-express.svg"
+              alt="American Express InfoCenter Store"
+            />
+          </div>
+          <div class="copy">
+            <span>Copyright &copy; 2025 InfoCenter Store</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
